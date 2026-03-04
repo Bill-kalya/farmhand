@@ -1,0 +1,28 @@
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+
+const MAPPING = {
+  'house.fill': 'home',
+  'paperplane.fill': 'send',
+  'chevron.left.forwardslash.chevron.right': 'code',
+  'chevron.right': 'chevron-right',
+};
+
+/**
+ * An icon component that uses native SF Symbols on iOS, and Material Icons on Android and web.
+ * This ensures a consistent look across platforms, and optimal resource usage.
+ * Icon `name`s are based on SF Symbols and require manual mapping to Material Icons.
+ * 
+ * @param {Object} props
+ * @param {string} props.name
+ * @param {number} [props.size=24]
+ * @param {string | Object} props.color
+ * @param {Object} [props.style]
+ */
+export function IconSymbol({
+  name,
+  size = 24,
+  color,
+  style,
+}) {
+  return <MaterialIcons color={color} size={size} name={MAPPING[name]} style={style} />;
+}

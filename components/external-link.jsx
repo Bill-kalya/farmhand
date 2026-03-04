@@ -1,10 +1,12 @@
-import { Href, Link } from 'expo-router';
+import { Link } from 'expo-router';
 import { openBrowserAsync, WebBrowserPresentationStyle } from 'expo-web-browser';
-import { type ComponentProps } from 'react';
 
-type Props = Omit<ComponentProps<typeof Link>, 'href'> & { href: Href & string };
-
-export function ExternalLink({ href, ...rest }: Props) {
+/**
+ * @param {Object} props
+ * @param {string} props.href
+ * @returns {JSX.Element}
+ */
+export function ExternalLink({ href, ...rest }) {
   return (
     <Link
       target="_blank"
