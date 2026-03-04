@@ -43,10 +43,6 @@ export default function RootLayout() {
             options={{ title: 'Create Account' }}
           />
           <Stack.Screen
-            name="(tabs)"
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="dashboard"
             options={{ title: 'Dashboard', headerShown: false }}
           />
