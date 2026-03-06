@@ -23,7 +23,12 @@
     },
     "web": {
       "bundler": "metro",
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "baseUrl": "farmhand",
+      "output": "static",
+      "build": {
+        "publicPath": "/farmhand/_expo/"
+      }
     },
     "plugins": [
       "expo-router",
@@ -41,6 +46,7 @@
       ]
     ],
     "experiments": {
+      "baseUrl": "/farmhand/",
       "typedRoutes": false,
       "reactCompiler": false
     }

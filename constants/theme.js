@@ -3,10 +3,21 @@
  * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
  */
 
-import { Platform } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
+const [shortDimension, longDimension] = width < height ? [width, height] : [height, width];
+
+// Default guideline sizes are based on standard ~5" screen mobile devices
+const guidelineBaseWidth = 350;
+const guidelineBaseHeight = 680;
+
+const scale = (size) => (shortDimension / guidelineBaseWidth) * size;
 
 const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
+
+export { scale };
 
 export const Colors = {
   light: {
