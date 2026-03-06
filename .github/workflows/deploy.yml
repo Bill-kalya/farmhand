@@ -37,9 +37,6 @@ jobs:
         run: |
           # Create favicon.ico in the dist root (browsers look for this at the site root)
           cp assets/images/favicon.png dist/favicon.ico
-          
-          # Also copy to _expo/static/media for consistency
-          cp assets/images/favicon.png dist/_expo/static/media/favicon.ico
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
